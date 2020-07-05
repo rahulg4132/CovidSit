@@ -1,0 +1,16 @@
+<div class="container"> 
+
+  <form [formGroup]="form">
+    <label>Select Country: </label>
+    <select class="custom-select" formControlName="selectedcountry">           
+      <option *ngFor="let country of countries" [(ngValue)]="country.name">
+        {{ country.name }}
+      </option>
+    </select>
+  </form>
+   
+
+  <div *ngIf="errMess">
+    <p>{{errMess}}</p>
+  </div>
+</div>

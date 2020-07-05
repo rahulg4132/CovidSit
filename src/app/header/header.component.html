@@ -1,0 +1,24 @@
+<div class="container">  
+  <h1 style="text-align: center;">Covid-19 Update</h1>
+  <div class="circle bg-warning">    
+    <p class="pt-4">Total Cases</p>
+    <hr>
+    <p style="font-size: xx-large;" [countUp]="gconfirm.value">0</p>
+  </div>  
+  <br>
+  <div class="d-flex justify-content-around">
+    <div class="card" style="background-color: hsl(202, 58%, 44%);">
+      <span class="pt-3">Active</span>
+      <span class="pt-2 aa" [countUp]="gconfirm.value-grecover.value-gdeath.value">0</span>
+    </div>
+    <div class="card" style="background-color: hsl(145, 83%, 40%);">
+      <span class="pt-3">Recovered</span>
+      <span class="pt-2 aa" [countUp]="grecover.value">0</span>
+    </div>
+    <div class="card" style="background-color: #ff0000a1;">
+      <span class="pt-3">Deaths</span>
+      <span class="pt-2 aa" [countUp]="gdeath.value">0</span>
+    </div>        
+  </div>   
+  <p class="pt-2" style="text-align: right;">Last Updated: {{globe.lastUpdate}}</p> 
+</div>
