@@ -11,9 +11,10 @@ import {ValDet} from '../shared/valdet';
 export class HeaderComponent implements OnInit {
 
   globe: Globe;
-  gconfirm: ValDet;
-  grecover: ValDet;
-  gdeath: ValDet;
+  gconfirm: number;
+  grecover: number;
+  gdeath: number;
+  gactive: number;
 
   constructor(private global: GlobalService) { }
   
@@ -21,9 +22,10 @@ export class HeaderComponent implements OnInit {
     return this.global.getglobal()
     .subscribe(data=>{
       this.globe=data;
-      this.gconfirm=data.confirmed;
-      this.grecover=data.recovered;
-      this.gdeath=data.deaths;
+      this.gconfirm=data.confirmed.value;
+      this.grecover=data.recovered.value;
+      this.gdeath=data.deaths.value;
+      this.gactive=this.gconfirm-this.grecover-this.gdeath;
     });
   }
   
